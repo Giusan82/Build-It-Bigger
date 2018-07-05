@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         mLoader.setVisibility(View.VISIBLE);
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
-        //Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
         final EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(this, new EndpointsAsyncTask.ResponseCallBack() {
             @Override
             public void response(String result) {

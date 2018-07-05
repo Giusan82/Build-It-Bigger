@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
     public void tellJoke(View view) {
         mLoader.setVisibility(View.VISIBLE);
 
-        //Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
         final EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(this, new EndpointsAsyncTask.ResponseCallBack() {
             @Override
             public void response(String result) {
