@@ -8,6 +8,7 @@ import android.widget.TextView;
 public class JokeDisplayActivity extends AppCompatActivity {
     public static String JOKE_KEY = "Joke key";
     private TextView mJokes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

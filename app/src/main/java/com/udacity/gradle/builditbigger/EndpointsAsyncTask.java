@@ -16,7 +16,7 @@ import java.io.IOException;
 
 
 //source: https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/77e9910911d5412e5efede5fa681ec105a0f02ad/HelloEndpoints#2-connecting-your-android-app-to-the-backend
-public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<String, Void, String> {
 
     private static MyApi myApiService = null;
     private Context mContext;
@@ -25,23 +25,24 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
     @Nullable
     private IdlingManager mIdlingManager;
 
-    public interface ResponseCallBack{
+    public interface ResponseCallBack {
         void response(String result);
     }
 
-    public EndpointsAsyncTask(Context context, ResponseCallBack callback, IdlingManager idlingManager){
+    public EndpointsAsyncTask(Context context, ResponseCallBack callback, IdlingManager idlingManager) {
         mContext = context;
         mResponseCallBack = callback;
         mIdlingManager = idlingManager;
     }
+
     @Override
-    protected String doInBackground(Pair<Context, String>... params) {
+    protected String doInBackground(String... params) {
 
         if (mIdlingManager != null) {
             mIdlingManager.setIdleState(false);
         }
 
-        if(myApiService == null) {  // Only do this once
+        if (myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
                     // this is IP used for accessing to server by my local network, maybe you need to change it to 10.0.2.2 if you are using Android emulator or 10.0.3.2 if you are using genymotion
@@ -55,9 +56,6 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
             // end options for devappserver
             myApiService = builder.build();
         }
-
-        mContext = params[0].first;
-        String name = params[0].second;
 
         try {
             return myApiService.fetchData().execute().getData();

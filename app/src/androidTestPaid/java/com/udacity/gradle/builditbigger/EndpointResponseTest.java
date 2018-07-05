@@ -62,7 +62,7 @@ public class EndpointResponseTest {
     }
 
     @Test
-    public void responseTest(){
+    public void responseTest() {
         onView(withId(R.id.bnt_tellJoke)).perform(click());
         intended(allOf(hasExtraWithKey(JokeDisplayActivity.JOKE_KEY)));
         onView(withId(R.id.tv_jokes)).check(matches(not(withText(""))));
@@ -76,7 +76,7 @@ public class EndpointResponseTest {
         }
     }
 
-    private Resources getResources(){
+    private Resources getResources() {
         return mMainRuleTest.getActivity().getResources();
     }
 

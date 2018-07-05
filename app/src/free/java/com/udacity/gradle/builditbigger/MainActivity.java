@@ -1,6 +1,5 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
 import android.support.test.espresso.IdlingResource;
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -46,11 +44,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mLoader = findViewById(R.id.loader);
 
-
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-
-
     }
 
 
@@ -91,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 final Intent intent = new Intent(MainActivity.this, JokeDisplayActivity.class);
                 intent.putExtra(JokeDisplayActivity.JOKE_KEY, result);
 
-                mInterstitialAd.setAdListener(new AdListener(){
+                mInterstitialAd.setAdListener(new AdListener() {
                     @Override
                     public void onAdClosed() {
                         super.onAdClosed();
@@ -114,11 +109,8 @@ public class MainActivity extends AppCompatActivity {
                 new Runnable() {
                     @Override
                     public void run() {
-
-                        endpointsAsyncTask.execute(new Pair<Context, String>(getApplicationContext(), "Manfred"));
+                        endpointsAsyncTask.execute();
                     }
                 }, DELAY_MILLIS);
     }
-
-
 }
