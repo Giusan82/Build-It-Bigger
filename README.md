@@ -11,6 +11,11 @@ of four modules. A Java library that provides jokes, a Google Cloud Endpoints
 activity for displaying jokes, and an Android app that fetches jokes from the
 GCE module and passes them to the Android Library for display.
 
+![alt tag](https://d17h27t6h515a5.cloudfront.net/topher/2017/October/59f8ff3d_screen-shot-2017-10-31-at-3.54.32-pm/screen-shot-2017-10-31-at-3.54.32-pm.png)
+
+The starting point for the this project was provided to me in the [course repository](https://github.com/udacity/ud867/tree/master/FinalProject).
+It contains an activity with a banner Ad and a button that purports to tell a joke.
+
 ## Why this Project
 
 As Android projects grow in complexity, it becomes necessary to customize the
@@ -30,7 +35,7 @@ Gradle to manage apps of increasing complexity. I learned to:
 * Use the Gradle App Engine plugin to deploy a backend
 * Configure an integration test suite that runs against the local App Engine development server
 
-![alt tag](https://d17h27t6h515a5.cloudfront.net/topher/2017/October/59f8ff3d_screen-shot-2017-10-31-at-3.54.32-pm/screen-shot-2017-10-31-at-3.54.32-pm.png)
+
 
 # Rubric
 
