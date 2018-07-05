@@ -1,3 +1,7 @@
+<p>App created for Udacity.com in the course: Google Challenge Scholarship: Android Developer Nanodegree Program
+<br>
+<i>Skill level</i>: <b>advanced</b></p>
+
 # Gradle for Android and Java Final Project
 
 In this project, it has been create an app with multiple flavors that uses
