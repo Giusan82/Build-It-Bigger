@@ -29,5 +29,6 @@ task endpointCloudTest{
         println 'Connected Tests Completed'
     }
 }
+
 endpointCloudTest.mustRunAfter ':backend:appengineStart'
 endpointCloudTest.finalizedBy ':backend:appengineStop'
